@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_approval_manager" model="res.groups">
+        <field name="name">Customer Approver</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">the user will be able to approve customers </field>
+    </record>
+</odoo>
+        

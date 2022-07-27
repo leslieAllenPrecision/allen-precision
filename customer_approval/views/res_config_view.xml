@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.customer.approval</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="12"/>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='quotation_order_setting_container']" position="inside">
+
+                <div class="col-12 col-lg-6 o_setting_box" id="pre_payment_term_settings">
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Payment Term</span>
+                        <div class="text-muted">
+                                Default Customer Payment Term
+                        </div>
+                        <div class="row mt16">
+                            <label for="pre_payment_term_id" class="col-lg-4 o_light_label"/>
+                            <field name="pre_payment_term_id" class="oe_inline"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
