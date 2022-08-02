@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class ResPartner(models.Model):
@@ -12,8 +15,8 @@ class ResPartner(models.Model):
     approval_needed = fields.Boolean(string="Approval Needed",compute="_compute_approval_needed")
 
     def _compute_approval_needed(self):
-        pre_payment_term_id =  self.env['ir.config_parameter'].get_param('customer_approval.pre_payment_term_id', False)
         for rec in self:
+            pre_payment_term_id =  rec.company_id.pre_payment_term_id.id
             if rec.is_approved or (pre_payment_term_id and  rec.property_payment_term_id.id == int(pre_payment_term_id)):
                 rec.approval_needed = False
             else:
@@ -23,7 +26,9 @@ class ResPartner(models.Model):
     @api.model
     def default_get(self, fields):
         res = super().default_get(fields)
-        pre_payment_term_id =  self.env['ir.config_parameter'].get_param('customer_approval.pre_payment_term_id', False)
+        pre_payment_term_id = False
+        if self.env.company:
+            pre_payment_term_id =  self.env.company.pre_payment_term_id.id
         if pre_payment_term_id:
             res["property_payment_term_id"] = int(pre_payment_term_id)
         return res

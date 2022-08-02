@@ -3,7 +3,7 @@
 
 {
     'name': 'Customer Approval',
-    'version': '1.0',
+    'version': '1.1',
     'category': 'sale',
     'description': """
 This is a customer approval module.
@@ -16,7 +16,7 @@ This is a customer approval module.
     'depends': ['sale'],
     'data': [  
         'security/customer_approval.xml',
-        'views/res_config_view.xml',
+        'views/res_company_view.xml',
         'views/res_partner_view.xml'
     ],
     'demo': [  ],
