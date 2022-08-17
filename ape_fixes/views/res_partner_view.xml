@@ -1,0 +1,30 @@
+<odoo>
+    <record id="account.res_partner_action_customer" model="ir.actions.act_window">
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id='view_partner_tree_inherit_ape' model="ir.ui.view">
+        <field name="name">res.partner.view.tree.inheirt</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="ref" string="Customer Number"/>
+            </field>
+        </field>
+    </record>
+
+    <record id='view_partner_form_inherit_ape' model="ir.ui.view">
+        <field name="name">res.partner.view.form.inheirt</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="user_ids" position="after">
+                <field name="ref" string="Customer Number"/>
+            </field>
+        </field>
+    </record>
+
+
+
+</odoo>
