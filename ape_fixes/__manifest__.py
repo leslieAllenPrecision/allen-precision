@@ -3,7 +3,7 @@
 
 {
     'name': 'APE FIXES',
-    'version': '1.0',
+    'version': '1.1',
     'category': 'sale',
     'license': 'AGPL-3',
     'description': """
@@ -13,9 +13,11 @@ This is a module to fix some the core base things.
 """,
     'author': 'Confianz Global,Inc.',
     'website': 'https://www.confianzit.com',
-    'depends': ['sale'],
+    'depends': ['sale_management','sale'],
     'data': [  
-       'views/res_partner_view.xml'
+       'views/res_partner_view.xml',
+       'views/sale_view.xml',
+       'views/account_view.xml'
     ],
     'demo': [  ],
     

@@ -21,6 +21,7 @@
         <field name="arch" type="xml">
             <field name="user_ids" position="after">
                 <field name="ref" string="Customer Number"/>
+                <field name="customer_type"/>
             </field>
         </field>
     </record>
