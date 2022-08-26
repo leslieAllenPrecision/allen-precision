@@ -3,8 +3,9 @@
 
 {
     'name': 'Customer Approval',
-    'version': '1.1',
+    'version': '1.2',
     'category': 'sale',
+    'license': 'AGPL-3',
     'description': """
 This is a customer approval module.
 ==============================================

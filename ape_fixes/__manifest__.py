@@ -3,17 +3,18 @@
 
 {
     'name': 'APE FIXES',
-    'version': '1.2',
+    'version': '1.3',
     'category': 'sale',
     'license': 'AGPL-3',
     'description': """
-This is a module to fix some the core base things.
 ==============================================
-    
+This is a module to fix some the core base things.
+And to add some new generic fields
+==============================================
 """,
     'author': 'Confianz Global,Inc.',
     'website': 'https://www.confianzit.com',
-    'depends': ['sale_management','sale','delivery'],
+    'depends': ['sale_management','sale','delivery','account_reports'],
     'data': [  
        'views/res_partner_view.xml',
        'views/sale_view.xml',

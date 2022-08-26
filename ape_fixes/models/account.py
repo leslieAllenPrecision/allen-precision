@@ -17,4 +17,18 @@ class AccountMove(models.Model):
         res = super().default_get(fields)
         res["invoice_date"] = datetime.now().date()
         return res
-    
+
+
+
+class ReportAccountAgedPartner(models.AbstractModel):   
+    _inherit = "account.aged.partner"
+
+
+    def _format_partner_id_line(self, res, value_dict, options):
+        res['name'] = value_dict['partner_name'][:128] if value_dict['partner_name'] else _('Unknown Partner')
+        if value_dict.get('partner_id',[])[0]:
+            partner = self.env['res.partner'].browse(int(value_dict.get('partner_id',[])[0]))
+            if partner.ref:
+                res['name'] = res['name'] + f' ({partner.ref})'
+        res['trust'] = value_dict['partner_trust']
+ 
