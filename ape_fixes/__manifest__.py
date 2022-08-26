@@ -7,7 +7,6 @@
     'category': 'sale',
     'license': 'AGPL-3',
     'description': """
-==============================================
 This is a module to fix some the core base things.
 And to add some new generic fields
 ==============================================
