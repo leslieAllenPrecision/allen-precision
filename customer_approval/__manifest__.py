@@ -11,6 +11,7 @@ This is a customer approval module.
 ==============================================
     * Customer Approval
     * Order Validation
+    
 """,
     'author': 'Confianz Global,Inc.',
     'website': 'https://www.confianzit.com',
