@@ -1,0 +1,7 @@
+<odoo>
+    <template id="l10n_us_check_printing_inherit" inherit_id="l10n_us_check_printing.ckus_check">
+        <xpath expr="//div[hasclass('ckus_payee_addr')]" position="attributes">
+            <attribute name='class' add="mt-4" seprator=" "/>
+        </xpath>
+    </template>
+</odoo> 
