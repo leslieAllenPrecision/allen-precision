@@ -3,7 +3,7 @@
 
 {
     'name': 'APE FIXES',
-    'version': '1.6',
+    'version': '1.7',
     'category': 'sale',
     'license': 'AGPL-3',
     'description': """
@@ -13,13 +13,14 @@ And to add some new generic fields
 """,
     'author': 'Confianz Global,Inc.',
     'website': 'https://www.confianzit.com',
-    'depends': ['sale_management','sale','delivery','account_reports','l10n_us_check_printing'],
+    'depends': ['sale_management','stock','sale','delivery','account_reports','l10n_us_check_printing'],
     'data': [  
        'views/res_partner_view.xml',
        'views/sale_view.xml',
        'views/account_view.xml',
        'views/picking_view.xml',
-       'views/print_check.xml'
+       'views/print_check.xml',
+       'views/inventory_report.xml',
     ],
     'demo': [  ],
     
