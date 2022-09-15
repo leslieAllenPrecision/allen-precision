@@ -3,7 +3,7 @@
 
 {
     'name': 'APE FIXES',
-    'version': '1.7',
+    'version': '1.8',
     'category': 'sale',
     'license': 'AGPL-3',
     'description': """
