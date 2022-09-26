@@ -17,6 +17,6 @@ class ProductProduct(models.Model):
         """
         name = self.display_name
         if self.description_sale:
-            name = self.description_sale
+            name = self.description_sale if not self.default_code else f'[{self.default_code}] {self.description_sale}'
 
         return name
