@@ -8,7 +8,11 @@
                 <xpath expr="//field[@name='available_quantity']" position='attributes'>
                     <attribute name="sum" add="total" separator=" "/>
                 </xpath>
+                <xpath expr="//field[@name='value']" position='attributes'>
+                    <attribute name="sum" add="total" separator=" "/>
+                </xpath>
             </data>
         </field>
     </record>
 </odoo>
+
