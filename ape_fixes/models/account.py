@@ -10,7 +10,19 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    customer_number = fields.Char(related="partner_id.ref",string='Customer Number')
+    customer_number = fields.Char(string="Customer Number",store=True,compute="_get_customer_number")
+
+    @api.depends('partner_id')
+    def _get_customer_number(self):
+        for rec in self:
+            if rec.partner_id:
+                if rec.partner_id.parent_id:
+                    rec.customer_number = rec.partner_id.parent_id.ref
+                else:
+                    rec.customer_number = rec.partner_id.ref
+            else:
+                rec.customer_number = False
+
 
     @api.model
     def default_get(self, fields):
@@ -31,4 +43,3 @@ class ReportAccountAgedPartner(models.AbstractModel):
             if partner.ref:
                 res['name'] = res['name'] + f' ({partner.ref})'
         res['trust'] = value_dict['partner_trust']
- 

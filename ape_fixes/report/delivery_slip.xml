@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
+        <xpath expr = "//t[@t-set='information_block']" position='after'>
+            <br/>
+            <p>
+                <span> Customer #:</span>
+                <strong><t t-esc="o.customer_number"/></strong>
+            </p>
+            <br/>
+        </xpath>
+        </template>
+    </data>
+</odoo>

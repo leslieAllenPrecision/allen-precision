@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_inherit" inherit_id='sale.report_saleorder_document'>
+        <xpath expr = "//div[hasclass('page')]/div[hasclass('oe_structure')]" position='before'>
+            <br/>
+            <p>
+                <span> Customer #:</span>
+                <strong><t t-esc="doc.customer_number"/></strong>
+            </p>
+            <br/>
+        </xpath>
+    </template>
+</odoo>

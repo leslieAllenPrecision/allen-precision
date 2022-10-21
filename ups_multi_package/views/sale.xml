@@ -1,0 +1,22 @@
+<odoo>
+    <record id='view_order_form_inherit_fixes' model="ir.ui.view">
+        <field name="name">sale.order.view.form.inheirt.ape</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//notebook" position="inside">
+                <page string="Delivery Package">
+                    <field name="delivery_package_ids">
+                        <tree editable='bottom'>
+                            <field name = 'height'/>
+                            <field name='width'/>
+                            <field name='length'/>
+                            <field name='weight'/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

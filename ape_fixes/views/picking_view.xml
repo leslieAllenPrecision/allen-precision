@@ -5,6 +5,10 @@
         <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>
         <field name="arch" type="xml">
             <data>
+                <xpath expr="//div[hasclass('o_td_label')]" position="before">
+                <field name="customer_number" string="Customer Number"/>
+            </xpath>
+
                 <xpath expr='//label[@for="shipping_weight"]' position='attributes'>
                     <attribute name="for">final_weight</attribute>
                 </xpath>

@@ -1,10 +1,29 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from optparse import Values
+from signal import valid_signals
+from odoo import models, fields, api ,_
 import logging
 from datetime import datetime
 
 _logger = logging.getLogger(__name__)
+
+
+class ProductTemplate(models.Model):
+    _inherit='product.template'
+
+    @api.model
+    def create(self, vals):
+        
+        if not vals.get('default_code'):
+            seq_date = None
+            prefix = ''
+            if vals.get('categ_id'):
+                categ_id = self.env['product.category'].sudo().browse([int(vals.get('categ_id'))])
+                if categ_id.product_prefix:
+                    prefix=categ_id.product_prefix
+            vals['default_code'] =f"{prefix}{self.env['ir.sequence'].next_by_code('product.template', sequence_date=seq_date) or _('New')}" 
+        return super(ProductTemplate,self).create(vals)
 
 
 class ProductProduct(models.Model):
@@ -20,3 +39,8 @@ class ProductProduct(models.Model):
             name = self.description_sale if not self.default_code else f'[{self.default_code}] {self.description_sale}'
 
         return name
+
+class ProductCategory(models.Model):
+    _inherit='product.category'
+
+    product_prefix =  fields.Char(string='Product Reference Prefix')

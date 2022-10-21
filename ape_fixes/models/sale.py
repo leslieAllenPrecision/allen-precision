@@ -19,6 +19,19 @@ class SaleOrder(models.Model):
         required=True, change_default=True, index=True, tracking=1,
         domain="[('ref','!=',False),('customer_rank','>',0),'|', ('company_id', '=', False), ('company_id', '=', company_id)]",)
 
+    delivery_address = fields.Html(string='Delivery Address',compute="_delivery_address",store=True)
+
+    @api.depends('partner_shipping_id')
+    def _delivery_address(self):
+        for rec in self:
+            if rec.partner_shipping_id:
+                if rec.partner_shipping_id.street2:
+                    rec.delivery_address = f"<pre>{rec.partner_shipping_id.street}<br>{rec.partner_shipping_id.street2}<br>{rec.partner_shipping_id.city} {rec.partner_shipping_id.state_id.code} {rec.partner_shipping_id.zip}<br>{rec.partner_shipping_id.country_id.name}</pre>" 
+                else:
+                    rec.delivery_address = f"<pre>{rec.partner_shipping_id.street}<br>{rec.partner_shipping_id.city} {rec.partner_shipping_id.state_id.code} {rec.partner_shipping_id.zip}<br>{rec.partner_shipping_id.country_id.name}</pre>" 
+            else:
+                rec.delivery_address = False
+        
     @api.model
     def create(self,vals):
         if vals.get('partner_id'):

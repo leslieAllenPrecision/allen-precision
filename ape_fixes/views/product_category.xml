@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id='view_catrgory_form_inherit_fixes' model="ir.ui.view">
+        <field name="name">product.category.view.form.inheirt.ape</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <field name='parent_id' position='after'>
+                <field name = 'product_prefix' />
+            </field>
+        </field>
+    </record>
+
+</odoo>
