@@ -6,8 +6,8 @@
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//div[hasclass('o_td_label')]" position="before">
-                <field name="customer_number" string="Customer Number"/>
-            </xpath>
+                    <field name="customer_number" string="Customer Number"/>
+                </xpath>
 
                 <xpath expr='//label[@for="shipping_weight"]' position='attributes'>
                     <attribute name="for">final_weight</attribute>
@@ -18,4 +18,18 @@
             </data>
         </field>
     </record>
+
+    <record id="vpicktree_inherit_ape" model="ir.ui.view">
+        <field name="name">vpicktree.ape.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <field name='partner_id' position='after'>
+                <field name='customer_number'/>
+            </field>
+        </field>
+    </record>
+
+
+
 </odoo>
