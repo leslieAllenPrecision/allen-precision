@@ -19,6 +19,18 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <field name='zip' position='attributes'>
+                <attribute name='required'>True</attribute>
+            </field>
+            <field name='city' position='attributes'>
+                <attribute name='required'>True</attribute>
+            </field>
+            <field name='state_id' position='attributes'>
+                <attribute name='required'>True</attribute>
+            </field>
+            <field name='phone' position='attributes'>
+                <attribute name='required'>True</attribute>
+            </field>
             <field name="user_ids" position="after">
                 <field name="ref" string="Customer Number"/>
                 <field name="customer_type"/>
