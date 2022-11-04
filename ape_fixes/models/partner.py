@@ -16,11 +16,12 @@ class ResPartner(models.Model):
         if not res.ref:
             seq_date = None
             prefix = ''
-            if res.customer_rank and res.customer_rank > 0 :
-                prefix='c'
-            elif res.supplier_rank and res.supplier_rank > 0 :
-                prefix = 'v'
-            res.ref =f"{prefix}{self.env['ir.sequence'].next_by_code('res.partner', sequence_date=seq_date) or _('New')}" 
+            if res.customer_rank and res.customer_rank > 0 and not res.parent_id:
+                prefix='C'
+                res.ref =f"{prefix}{self.env['ir.sequence'].next_by_code('res.partner.customer', sequence_date=seq_date) or _('New')}" 
+            elif res.supplier_rank and res.supplier_rank > 0 and not res.parent_id:
+                prefix = 'V'
+                res.ref =f"{prefix}{self.env['ir.sequence'].next_by_code('res.partner.vendor', sequence_date=seq_date) or _('New')}" 
         return res
 
 
