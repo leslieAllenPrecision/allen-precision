@@ -11,6 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class DeliveryPackage(models.Model):
     _name = "delivery.package"
+    _description = "This Module manage the multiple packages for delivery"
 
     height = fields.Float(string='Height')
     width = fields.Float(string='width')
