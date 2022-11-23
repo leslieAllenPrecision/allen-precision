@@ -20,7 +20,7 @@ class SaleOrder(models.Model):
         domain="[('ref','!=',False),('customer_rank','>',0),'|', ('company_id', '=', False), ('company_id', '=', company_id)]",)
 
     delivery_address = fields.Html(string='Delivery Address',compute="_delivery_address",store=True)
-
+    sales_agent = fields.Many2one('res.partner',string='Sales Agent')
     @api.depends('partner_shipping_id')
     def _delivery_address(self):
         for rec in self:
