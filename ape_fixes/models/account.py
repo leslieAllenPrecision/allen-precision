@@ -43,3 +43,20 @@ class ReportAccountAgedPartner(models.AbstractModel):
             if partner.ref:
                 res['name'] = res['name'] + f' ({partner.ref})'
         res['trust'] = value_dict['partner_trust']
+
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+    cost = fields.Float(string='Cost Price',related='product_id.standard_price',store='True')
+
+
+class AccountInvoiceReport(models.Model):
+    _inherit = "account.invoice.report"
+
+    cost = fields.Float(string='Cost Price', readonly=True,)
+
+    _depends = {
+        'account.move.line': ['cost'],
+    }
+
+    def _select(self):
+        return super()._select() + ", line.cost as cost"

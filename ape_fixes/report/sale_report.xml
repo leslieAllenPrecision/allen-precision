@@ -5,9 +5,30 @@
             <br/>
             <p>
                 <span> Customer #:</span>
-                <strong><t t-esc="doc.customer_number"/></strong>
+                <strong>
+                    <t t-esc="doc.customer_number"/>
+                </strong>
             </p>
             <br/>
+        </xpath>
+        <xpath expr="//t[@t-set='address']/div" position='replace'/>
+        <xpath expr="//t[@t-set='information_block']/.." position='replace'>
+
+            <t>
+                <div class='d-flex justify-content-between w-100' style='justif-content:space-between'>
+                    <div>
+                        <strong t-if="doc.partner_shipping_id == doc.partner_invoice_id">Invoicing and Shipping Address:</strong>
+                        <strong t-if="doc.partner_shipping_id != doc.partner_invoice_id">Invoicing Address:</strong>
+                        <div t-field="doc.partner_invoice_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                    </div>
+                    <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">
+                        <div>
+                            <strong>Shipping Address:</strong>
+                            <div t-field="doc.partner_shipping_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                        </div>
+                    </t>
+                </div>
+            </t>
         </xpath>
     </template>
 </odoo>
