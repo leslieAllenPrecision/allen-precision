@@ -1,14 +1,55 @@
 <odoo>
     <data>
         <template id="report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
-        <xpath expr = "//t[@t-set='information_block']" position='after'>
-            <br/>
-            <p>
-                <span> Customer #:</span>
-                <strong><t t-esc="o.customer_number"/></strong>
-            </p>
-            <br/>
-        </xpath>
+            <xpath expr = "//t[@t-set='information_block']" position='after'>
+                <br/>
+                <p>
+                    <span> Customer #:</span>
+                    <strong>
+                        <t t-esc="o.customer_number"/>
+                    </strong>
+                </p>
+                <br/>
+            </xpath>
+            <xpath expr='//t[@t-set="information_block"]' position='replace'>
+                <t t-set="information_block">
+                    <div class="row">
+                        <div class="col-7" name="div_incoming_address">
+                            <div t-if="o.picking_type_id.code=='incoming' and partner">
+                                <span>
+                                    <strong>Vendor Address:</strong>
+                                </span>
+                            </div>
+                            <div t-if="o.picking_type_id.code=='internal' and partner">
+                                <span>
+                                    <strong>Warehouse Address:</strong>
+                                </span>
+                            </div>
+                            <div t-if="o.picking_type_id.code=='outgoing' and partner">
+                                <span>
+                                    <strong>Invoice Address:</strong>
+                                </span>
+                            </div>
+                            <div t-if="partner" name="partner_header">
+                                <t t-if="o.picking_type_id.code=='outgoing' and o.sale_id">
+                                    <div t-field="o.sale_id.partner_invoice_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                    <p t-if="partner.sudo().commercial_partner_id.vat">
+                                        <t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>
+                                        :<span t-field="partner.sudo().commercial_partner_id.vat"/>
+                                    </p>
+                                </t>
+                                <t t-else=''>
+                                    <div t-field="partner.commercial_partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                    <p t-if="partner.sudo().commercial_partner_id.vat">
+                                        <t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>
+                                        :<span t-field="partner.sudo().commercial_partner_id.vat"/>
+                                    </p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </xpath>
         </template>
     </data>
 </odoo>
