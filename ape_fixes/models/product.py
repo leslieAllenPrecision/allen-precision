@@ -3,6 +3,7 @@
 from optparse import Values
 from signal import valid_signals
 from odoo import models, fields, api ,_
+from odoo.exceptions import UserError, ValidationError
 import logging
 from datetime import datetime
 
@@ -11,6 +12,14 @@ _logger = logging.getLogger(__name__)
 
 class ProductTemplate(models.Model):
     _inherit='product.template'
+
+    @api.constrains('default_code')
+    def _check_default_code(self):
+        for rec in self:
+            if rec.default_code:
+                p_id = rec.search([('default_code','=',rec.default_code),('id','not in',[rec.id])])
+                if p_id:
+                    raise  UserError(_(f'Internal Reference {rec.default_code} already exist in product {p_id.display_name}'))
 
     @api.model
     def create(self, vals):

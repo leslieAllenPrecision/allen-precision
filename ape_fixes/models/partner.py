@@ -3,12 +3,23 @@
 from odoo import models, fields, api ,_
 import logging
 from datetime import datetime
+from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+
+
+
+    @api.constrains('ref')
+    def _check_ref(self):
+        for rec in self:
+            if rec.ref:
+                p_id = rec.search([('ref','=',rec.ref),('id','not in',[rec.id])])
+                if p_id:
+                    raise  UserError(_(f'Customer Number {rec.ref} already exist in partner {p_id.name}'))
 
     @api.model
     def create(self, vals):
