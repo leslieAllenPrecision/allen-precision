@@ -33,6 +33,7 @@
             </field>
             <field name="user_ids" position="after">
                 <field name="ref" string="Customer Number"/>
+                <field name='contact_type' required='1'/>
                 <field name="customer_type"/>
             </field>
             <field name='category_id' position='replace'>
