@@ -46,7 +46,17 @@ class ReportAccountAgedPartner(models.AbstractModel):
 
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
-    cost = fields.Float(string='Cost Price',related='product_id.standard_price',store='True')
+
+    @api.depends('product_id','quantity')
+    def _calc_cost(self):
+        for rec in self:
+            if rec.product_id.rent_ok:
+                rec.cost = 0.0
+            else:
+                rec.cost = rec.product_id.standard_price * rec.quantity
+
+
+    cost = fields.Float(string='Cost Price',compute='_calc_cost',store='True')
 
 
 class AccountInvoiceReport(models.Model):
