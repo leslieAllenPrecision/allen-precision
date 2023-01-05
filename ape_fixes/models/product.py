@@ -49,15 +49,17 @@ class ProductProduct(models.Model):
 
     @api.model
     def create(self, vals):
-        if not vals.get('default_code'):
+        # print(vals)
+        res  = super(ProductProduct,self).create(vals)
+        if not res.default_code:
             seq_date = None
             prefix = ''
-            if vals.get('categ_id'):
-                categ_id = self.env['product.category'].sudo().browse([int(vals.get('categ_id'))])
+            if res.categ_id:
+                categ_id = res.categ_id
                 if categ_id.product_prefix:
                     prefix=categ_id.product_prefix
-            vals['default_code'] =f"{prefix}{self.env['ir.sequence'].next_by_code('product.template', sequence_date=seq_date) or _('New')}" 
-        return super(ProductProduct,self).create(vals)
+            res.default_code=f"{prefix}{self.env['ir.sequence'].next_by_code('product.template', sequence_date=seq_date) or _('New')}" 
+        return res
 
 
 

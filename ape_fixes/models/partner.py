@@ -24,7 +24,7 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals):
         res = super(ResPartner,self).create(vals)
-        if not res.ref:
+        if not res.ref and not res.type == 'delivery':
             seq_date = None
             prefix = ''
             if res.customer_rank and res.customer_rank > 0 and not res.parent_id:
