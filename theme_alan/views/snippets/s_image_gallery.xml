@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Image Gallery Snippet -->
+	<template id="as_image_gallery" name="Image Gallery Snippet">
+        <section class="as_image_gallery as_snippet as-load" data-tabData="">
+        	Image Gallery Snippet
+        </section>
+    </template>
+
+    <!-- Image Gallery Snippet Options-->
+    <template id="s_gallery_image_options" inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-js="AsGalleryImage" data-selector=".as_image_gallery">
+                <we-row string="Configuration">
+                    <we-button data-name="dynamic_menu" data-select-class="activate" class="fa fa-cog w-100 set-img-gallery-config" data-no-preview="true"/>
+                </we-row>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Image Snippet Thumbnail-->
+    <template id="s_image_gallery_snippet" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_effect']//t[@t-snippet][last()]" position="after">
+            <t t-snippet="theme_alan.as_image_gallery" t-thumbnail="/theme_alan/static/src/img/snippets_thumbs/as_image_gallery.png" />
+        </xpath>
+    </template>
+
+    <!-- Image gallery SCSS -->
+    <record id="theme_alan.s_image_gallery_scss" model="ir.asset">
+        <field name="key">theme_alan.s_image_gallery_scss</field>
+        <field name="name">Image Gallery SCSS</field>
+        <field name="active" eval="True"/>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">theme_alan/static/src/js/snippets/s_image_gallery/000.scss</field>
+    </record>
+
+    <!-- Image Gallery Snippet JS -->
+    <record id="theme_alan.s_image_gallery_js" model="ir.asset">
+        <field name="key">theme_alan.s_image_gallery_js</field>
+        <field name="name">Image Gallery JS</field>
+        <field name="active" eval="True"/>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="sequence">22</field>
+        <field name="path">theme_alan/static/src/js/snippets/s_image_gallery/000.js</field>
+    </record>
+
+</odoo>
