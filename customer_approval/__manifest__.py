@@ -13,7 +13,7 @@ This is a customer approval module.
     * Order Validation
     
 """,
-    'author': 'Confianz Global,Inc.',
+    'author': 'Confianz Global,Inc',
     'website': 'https://www.confianzit.com',
     'depends': ['sale'],
     'data': [  
