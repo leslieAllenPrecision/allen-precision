@@ -13,7 +13,7 @@ And to add some new generic fields
 """,
     'author': 'Confianz Global,Inc.',
     'website': 'https://www.confianzit.com',
-    'depends': ['sale_management','stock','sale','delivery','account_reports','l10n_us_check_printing'],
+    'depends': ['sale_management','sale_renting','stock','sale','delivery','account_reports','l10n_us_check_printing'],
     'data': [  
         'report/sale_report.xml',
         'report/delivery_slip.xml',

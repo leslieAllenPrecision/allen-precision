@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from optparse import Values
-from signal import valid_signals
+# from signal import valid_signals
 from odoo import models, fields, api ,_
 from odoo.exceptions import UserError, ValidationError
 import logging
@@ -12,6 +12,9 @@ _logger = logging.getLogger(__name__)
 
 class ProductTemplate(models.Model):
     _inherit='product.template'
+    
+    product_url = fields.Char()
+    product_sku = fields.Char()
 
     @api.constrains('default_code')
     def _check_default_code(self):

@@ -17,28 +17,30 @@ class SaleOrder(models.Model):
         'res.partner', string='Customer', readonly=True,
         states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
         required=True, change_default=True, index=True, tracking=1,
-        domain="[('ref','!=',False),('customer_rank','>',0),'|', ('company_id', '=', False), ('company_id', '=', company_id)]",)
+        domain="[('contact_type','!=','ven'),'|', ('company_id', '=', False), ('company_id', '=', company_id)]",)
 
-    delivery_address = fields.Html(string='Delivery Address ',compute="_delivery_address",store=True)
+    delivery_address = fields.Html(string='Delivery Address ',compute='_delivery_address',store=True)
     sales_agent = fields.Many2one('res.users',string='Sales Agent')
     @api.depends('partner_shipping_id')
     def _delivery_address(self):
         for rec in self:
             if rec.partner_shipping_id:
                 if rec.partner_shipping_id.street2:
-                    rec.delivery_address = f"<pre>{rec.partner_shipping_id.street}<br>{rec.partner_shipping_id.street2}<br>{rec.partner_shipping_id.city} {rec.partner_shipping_id.state_id.code} {rec.partner_shipping_id.zip}<br>{rec.partner_shipping_id.country_id.name}</pre>" 
+                    rec.delivery_address = f"<pre>{rec.partner_shipping_id.street}<br>{rec.partner_shipping_id.street2}<br>{rec.partner_shipping_id.city} {rec.partner_shipping_id.state_id.code} {rec.partner_shipping_id.zip}<br>{rec.partner_shipping_id.country_id.name}</pre>"
                 else:
-                    rec.delivery_address = f"<pre>{rec.partner_shipping_id.street}<br>{rec.partner_shipping_id.city} {rec.partner_shipping_id.state_id.code} {rec.partner_shipping_id.zip}<br>{rec.partner_shipping_id.country_id.name}</pre>" 
+                    rec.delivery_address = f"<pre>{rec.partner_shipping_id.street}<br>{rec.partner_shipping_id.city} {rec.partner_shipping_id.state_id.code} {rec.partner_shipping_id.zip}<br>{rec.partner_shipping_id.country_id.name}</pre>"
             else:
                 rec.delivery_address = False
-        
-    @api.model
-    def create(self,vals):
-        if vals.get('partner_id'):
-            partner = self.env['res.partner'].sudo().browse(int(vals.get('partner_id')))
-            if not partner.ref:
-                raise UserError('Cannot create sale order for customer not having customer number')
-        res = super(SaleOrder,self).create(vals)
-        return res
+
+
+
+# @api.model
+# def create(self,vals):
+#     if vals.get('partner_id'):
+#         partner = self.env['res.partner'].sudo().browse(int(vals.get('partner_id')))
+#         if not partner.ref:
+#             raise UserError('Cannot create sale order for customer not having customer number')
+#     res = super(SaleOrder,self).create(vals)
+#     return res
 
 

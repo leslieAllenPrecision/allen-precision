@@ -19,21 +19,18 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <field name='zip' position='attributes'>
+            <field name='street' position='attributes'>
                 <attribute name='required'>True</attribute>
             </field>
-            <field name='city' position='attributes'>
-                <attribute name='required'>True</attribute>
-            </field>
-            <field name='state_id' position='attributes'>
-                <attribute name='required'>True</attribute>
-            </field>
+<!--            <field name='street2' position='attributes'>-->
+<!--                <attribute name='required'>True</attribute>-->
+<!--            </field>-->
             <field name='phone' position='attributes'>
                 <attribute name='required'>True</attribute>
             </field>
             <field name="user_ids" position="after">
-                <field name="ref" string="Customer Number"/>
-                <field name='contact_type' required='1'/>
+                <field name="ref" string="Customer Number" force_save="1" readonly="1"/>
+                <field name='contact_type' required="1" />
                 <field name="customer_type"/>
             </field>
             <field name='category_id' position='replace'>
