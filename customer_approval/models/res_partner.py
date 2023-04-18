@@ -14,6 +14,11 @@ class ResPartner(models.Model):
 
     approval_needed = fields.Boolean(string="Approval Needed",compute="_compute_approval_needed")
 
+    def write(self, vals):
+        if self.env.user.has_group('customer_approval.group_hide_edit_ebiz'):
+            return super(ResPartner, self.sudo()).write(vals)
+        return super(ResPartner, self).write(vals)
+
     def _compute_approval_needed(self):
         for rec in self:
             pre_payment_term_id =  rec.company_id.pre_payment_term_id.id
