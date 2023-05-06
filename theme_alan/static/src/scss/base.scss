@@ -130,6 +130,10 @@ img {
     white-space: nowrap;
     color: transparent !important;
     background: $as-white;
+    .o_editable & {
+        font-size: 15px;
+        cursor: pointer;
+    }
     &:before,
     &:after {
         content: "";
@@ -139,6 +143,10 @@ img {
         left: 0;
         right: 0;
         margin: auto;
+        pointer-events: none;
+        .o_editable & {
+            display: none;
+        }
     }
     &:before {
         color: $primary;
@@ -160,6 +168,15 @@ img {
         animation: pulse-border 1500ms ease-out infinite;
         pointer-events: none;
         z-index: -1;
+        background: #fff;
+    }
+    &.bg-primary {
+        &:before {
+            color: $as-white;
+        }
+        &:after {
+            background: $as-white;
+        }
     }
 }
 

@@ -17,7 +17,7 @@
                                     <div class="text-white h1 mb-4 fw-600">Video Tour Alan Academy</div>
                                     <p class="text-white lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
                                     <div class="pt-4">
-                                        <a class="video-btn text-white bg-primary popup-youtube" href="https://www.youtube.com/watch?v=1jtbGjqiYmI"></a>
+                                        <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=1jtbGjqiYmI"></a>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-lg-8 my-3">
                                         <section class="overflow-hidden position-relative oe_img_bg o_bg_img_center min-vh-50 pt224 pb224 d-flex align-items-center justify-content-center" style="background-image: url('/theme_alan/static/src/img/snippets/1000x500.jpg');">
-                                            <a href="https://www.youtube.com/watch?v=1jtbGjqiYmI" class="video-btn m-auto">
+                                            <a href="https://www.youtube.com/watch?v=1jtbGjqiYmI" class="video-btn popup-youtube m-auto">
                                                 <span></span>
                                             </a>
                                         </section>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="col-lg-5 mb-5">
                                     <div class="text-center">
-                                        <a class="video-btn text-white bg-primary popup-youtube" href="https://www.youtube.com/watch?v=1jtbGjqiYmI"></a>
+                                        <a class="video-btn popup-youtube" href="https://www.youtube.com/watch?v=1jtbGjqiYmI"></a>
                                     </div>
                                 </div>
                             </div>

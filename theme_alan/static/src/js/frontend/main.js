@@ -701,4 +701,22 @@ VariantMixin._onChangeCombination = function (ev, $parent, combination) {
     combinationVariant.apply(this, [ev, $parent, combination]);
 };
 
+publicWidget.registry.as_youtube_popup = publicWidget.Widget.extend({
+    selector: "#wrapwrap",
+    'events':{
+        'click .popup-youtube':'_openVideoPop'
+    },
+    _openVideoPop:function(ev){
+        ev.preventDefault();
+        $(ev.currentTarget).magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });
+    },
+})
+
 });

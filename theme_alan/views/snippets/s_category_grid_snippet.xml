@@ -25,21 +25,4 @@
         </xpath>
     </template>
 
-    <!-- Category Grid Snippet JS -->
-    <record id="theme_alan.s_categ_grid_000_js" model="ir.asset">
-        <field name="key">theme_alan.s_cat_grid</field>
-        <field name="name">Category Grid JS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_category_grid/000.js</field>
-    </record>
-
-    <!-- Category Grid Snippet SCSS -->
-    <record id="theme_alan.s_categ_grid_000_scss" model="ir.asset">
-        <field name="key">theme_alan.s_cat_grid_scss</field>
-        <field name="name">Category Grid SCSS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_category_grid/000.scss</field>
-    </record>
 </odoo>

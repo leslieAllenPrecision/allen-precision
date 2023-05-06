@@ -253,6 +253,10 @@
                                     <!-- col -->
                                     <t t-call="theme_alan.slider_temp43"/>
                                     <!-- end col -->
+
+                                    <!-- col -->
+                                    <t t-call="theme_alan.slider_temp44"/>
+                                    <!-- end col -->
                                 </div>
                             </div>
 

@@ -1673,7 +1673,7 @@
                 <input type="hidden" name="tag" t-att-value="t"/>
             </t>
         </t>
-        <t t-if="category">
+        <t t-if="category and as_shop">
             <input type="hidden" name="category" t-att-value="category.id"/>
         </t>
         <t t-if="min_price">

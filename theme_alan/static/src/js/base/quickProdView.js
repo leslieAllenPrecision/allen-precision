@@ -175,7 +175,7 @@ var quickAddCart =  Dialog.extend(VariantMixin, cartHandlerMixin, AjaxAddToCart,
         cr._alanAddToCart(params).then(data =>{
             alanUpdateCartNavBar(data);
             var cartQuant = data.cart_quantity;
-            var totalAmount = webUtils.Markup($(data["website_sale.short_cart_summary"]).find("#order_total_untaxed").find(".monetary_field").html());
+            var totalAmount = webUtils.Markup($(data["website_sale.short_cart_summary"]).find("#order_total").find(".monetary_field").html());
             ajax.jsonRpc('get/quick_product_view', 'call',{
                 'hasVariant':false,
                 'productId':params.product_id,

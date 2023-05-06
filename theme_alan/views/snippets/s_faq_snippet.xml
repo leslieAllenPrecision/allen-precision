@@ -47,22 +47,4 @@
         </xpath>
     </template>
 
-    <!-- FAQ Snippet SCSS -->
-    <record id="theme_alan.s_faq_000_scss" model="ir.asset">
-        <field name="key">theme_alan.s_faq_scss</field>
-        <field name="name">FAQ SCSS</field>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="sequence">22</field>
-        <field name="active" eval="True"/>
-        <field name="path">theme_alan/static/src/js/snippets/s_faq_snippet/000.scss</field>
-    </record>
-
-    <!-- FAQ Snippet JS -->
-    <record id="theme_alan.s_faq_000_js" model="ir.asset">
-        <field name="key">theme_alan.s_faq_js</field>
-        <field name="name">FAQ JS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_faq_snippet/000.js</field>
-    </record>
 </odoo>

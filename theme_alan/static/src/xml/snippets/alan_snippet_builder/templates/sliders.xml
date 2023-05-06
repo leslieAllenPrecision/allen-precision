@@ -2860,4 +2860,72 @@
         </div>
     </div>
 </t>
+<t t-name="theme_alan.slider_temp44">
+    <div class="col-md-3">
+        <div class="e_sb_snnippet_box">
+            <div class="img">
+                <img src="/theme_alan/static/src/img/snippets/snippets_icon/slider-44.jpg" />
+            </div>
+            <div class="snippet-as">
+                <textarea class="sr-only snippet-textarea">
+                    <section class="s_carousel_wrapper oe_snippet_body s_comparisons responsive-slider-snippet-2" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+                        <div class="s_carousel s_carousel_default carousel slide" data-interval="10000" id="slider_snippet_44">
+                            <ol class="carousel-indicators">
+                                <li data-slide-to="0" class="active" data-target="#slider_snippet_44"></li>
+                                <li data-slide-to="1" data-target="#slider_snippet_44"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-name="Slide">
+                                    <div class="container-fluid p-0 rs-desktop-slider">
+                                        <div class="row no-gutters">
+                                            <div class="col-lg-12">
+                                                <img src="/theme_alan/static/src/img/snippets/1920x800.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid p-0 rs-mobile-slider">
+                                        <div class="row no-gutters">
+                                            <div class="col-lg-12">
+                                                <img src="/theme_alan/static/src/img/snippets/1920x800.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="carousel-item" data-name="Slide">
+                                    <div class="container-fluid p-0 rs-desktop-slider">
+                                        <div class="row no-gutters">
+                                            <div class="col-lg-12">
+                                                <img src="/theme_alan/static/src/img/snippets/1920x800.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid p-0 rs-mobile-slider">
+                                        <div class="row no-gutters">
+                                            <div class="col-lg-12">
+                                                <img src="/theme_alan/static/src/img/snippets/1920x800.jpg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev o_not_editable" contenteditable="false" data-slide="prev" role="img" aria-label="Previous" title="Previous" href="#slider_snippet_44">
+                                <span class="carousel-control-prev-icon"></span>
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </a>
+                            <a class="carousel-control-next o_not_editable" contenteditable="false" data-slide="next" role="img" aria-label="Next" title="Next" href="#slider_snippet_44">
+                                <span class="carousel-control-next-icon"></span>
+                                <span class="sr-only o_default_snippet_text">Next</span>
+                            </a>
+                        </div>
+                    </section>
+                </textarea>
+                <h6>Mobile Slider</h6>
+                <label class="e-sb-label" for="e_slider_44"><input id="e_slider_44" name="radio-snippet" type="radio" /><span /></label>
+            </div>
+        </div>
+    </div>
+</t>
 </templates>

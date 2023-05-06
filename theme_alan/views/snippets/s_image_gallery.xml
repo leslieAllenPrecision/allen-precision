@@ -25,23 +25,4 @@
         </xpath>
     </template>
 
-    <!-- Image gallery SCSS -->
-    <record id="theme_alan.s_image_gallery_scss" model="ir.asset">
-        <field name="key">theme_alan.s_image_gallery_scss</field>
-        <field name="name">Image Gallery SCSS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_image_gallery/000.scss</field>
-    </record>
-
-    <!-- Image Gallery Snippet JS -->
-    <record id="theme_alan.s_image_gallery_js" model="ir.asset">
-        <field name="key">theme_alan.s_image_gallery_js</field>
-        <field name="name">Image Gallery JS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="sequence">22</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_image_gallery/000.js</field>
-    </record>
-
 </odoo>

@@ -2047,3 +2047,35 @@
         }
     }
 }
+
+
+/* Responsive Slider Snippet 2 
+------------------------------------------*/
+.responsive-slider-snippet-2 {
+    .carousel-item {
+        .rs-mobile-slider,
+        .rs-desktop-slider {
+            img {
+                width: 100%;
+            }
+        }
+        @media(max-width: 992px){
+            .rs-desktop-slider {
+                display: none;
+            }
+        }
+        @media(min-width: 991px){
+            .rs-mobile-slider {
+                display: none;
+            }
+        }
+        
+        // Edit Mode
+        .editor_enable & {
+            .rs-mobile-slider {
+                display: block !important;
+            }
+        }
+    }
+
+}

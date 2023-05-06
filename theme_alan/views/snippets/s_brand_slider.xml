@@ -26,22 +26,4 @@
         </xpath>
     </template>
 
-    <!-- Brand Slider Snippet SCSS -->
-    <record id="theme_alan.s_brand_slider_000_scss" model="ir.asset">
-        <field name="key">theme_alan.s_brand_slider_scss</field>
-        <field name="name">Brand Slider SCSS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="sequence">22</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_brand_slider/000.scss</field>
-    </record>
-
-    <!-- Brand Slider Snippet JS -->
-    <record id="theme_alan.s_brand_slider_000_js" model="ir.asset">
-        <field name="key">theme_alan.s_brand_product_blog_js</field>
-        <field name="name">Brand - Brand Product - Blog JS</field>
-        <field name="active" eval="True"/>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_brand_slider/000.js</field>
-    </record>
 </odoo>

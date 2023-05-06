@@ -26,23 +26,4 @@
         </xpath>
     </template>
 
-    <!-- Product Banner Snippet SCSS -->
-    <record id="theme_alan.s_product_banner_scss" model="ir.asset">
-        <field name="key">theme_alan.s_product_banner_scss</field>
-        <field name="name">Product Banner SCSS</field>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="active" eval="True"/>
-        <field name="sequence">22</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_product_banner_slider/000.scss</field>
-    </record>
-
-    <!-- Product Banner Snippet JS -->
-    <record id="theme_alan.s_product_banner_slider_000_js" model="ir.asset">
-        <field name="key">theme_alan.s_product_banner_slider_js</field>
-        <field name="name">Product Banner JS</field>
-        <field name="bundle">web.assets_frontend</field>
-        <field name="active" eval="True"/>
-        <field name="sequence">22</field>
-        <field name="path">theme_alan/static/src/js/snippets/s_product_banner_slider/000.js</field>
-    </record>
 </odoo>

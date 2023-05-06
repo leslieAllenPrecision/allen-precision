@@ -237,11 +237,13 @@
 		background: none;
 	}
 
-	.as_close {
-	    top: 10px;
-		right: 10px;
-		position: absolute;
-		z-index: 2;
+	&.modal {
+		.as_close {
+		    top: 10px;
+			right: 10px;
+			position: absolute;
+			z-index: 2;
+		}
 	}
 
 	.as-hotspot-modal-img {
