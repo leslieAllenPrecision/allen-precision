@@ -9,7 +9,7 @@
     'support': 'support@atharvasystem.com',
     'website' : 'https://www.atharvasystem.com',
     'live_test_url': 'https://alan-v15.atharvasystem.com',
-    'description': """Theme Alan is one of the most powerful, amazing and flexible theme on Odoo store""",
+    'description': """Theme Alan is one of the most powerful, amazing and flexible theme on Odoo store.""",
     'summary': 'Theme Alan is one of the most powerful, amazing and flexible theme on Odoo store.',
     'depends': ['atharva_theme_base'],
     'data': [
