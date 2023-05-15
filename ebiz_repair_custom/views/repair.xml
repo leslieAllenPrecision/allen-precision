@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id='view_repair_order_form_inherit_fixes' model="ir.ui.view">
+            <field name="name">repair.order.view.form.inherit.ape</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position='attributes'>
+                    <attribute name='readonly'>1</attribute>
+                </field>
+                <field name="product_id" position='after'>
+                    <field name="product_information" required="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id='view_repair_order_list_inherit_fixes' model="ir.ui.view">
+            <field name="name">repair.order.view.list.inherit.ape</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position='after'>
+                    <field name="product_information"/>
+                </field>
+            </field>
+        </record>
+
+        <record id='view_repair_order_search_inherit_fixes' model="ir.ui.view">
+            <field name="name">repair.order.view.search.inherit.ape</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_form_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="product_information"/>
+                </field>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="filter_domain">
+                        [
+                            '|', '|', ('name', 'ilike', self),
+                            ('product_id', 'ilike', self),
+                            ('product_information', 'ilike', self)
+                        ]
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
