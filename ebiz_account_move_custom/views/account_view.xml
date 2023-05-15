@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ebiz_account_move_tree_inherit" model="ir.ui.view">
+        <field name="name">ebiz.account.move.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="ref" position="after">
+                <field name="payment_check_number" optional="hide"/>
+            </field>
+        </field>
+    </record>
+</odoo>
