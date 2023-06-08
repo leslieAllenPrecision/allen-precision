@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_google_feed_config_action" model="ir.cron">
+            <field name="name">Google Feed Scheduler</field>
+            <field name="interval_number">30</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field name="model_id" ref="model_google_feed_config"/>
+            <field name="state">code</field>
+            <field name="code">model.auto_generate_google_feed()</field>
+    </record>
+</odoo>

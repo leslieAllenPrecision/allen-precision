@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_server_config_form" model="ir.ui.view">
+            <field name="name">server.config.view</field>
+            <field name="model">server.config</field>
+            <field name="arch" type="xml">
+                <form string="Server Configuration">
+                	<header>
+                		<button name="test_server_connection" string="Test Connection" type="object" class="oe_highlight"/>
+                	</header>
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="name" required="1"/>
+								<field name="host" required="1"/>
+                                <field name="user_name" required="1"/>
+                                <field name="password" required="1"/>
+                            </group>
+                            <group>
+                            	<field name="port" required="1"/>                            	
+                               	<field name="protocol" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_server_config_tree">
+            <field name="name">server.config.tree</field>
+            <field name="model">server.config</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="host"/>
+                    <field name="user_name"/>
+					<field name="password"/>
+					<field name="port"/>					
+                    <field name="protocol"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_server_config" model="ir.actions.act_window">
+            <field name="name">Server Config</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">server.config</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+			id="menu_server_config"
+			action="action_server_config"
+			name="Server Configuration" 	
+			parent="google_feed_config_id"  	
+			sequence="1"/>	
+    </data>
+</odoo>

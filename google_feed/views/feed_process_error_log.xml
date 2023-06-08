@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_feed_process_error_log_form" model="ir.ui.view">
+            <field name="name">feed.process.error.log.view</field>
+            <field name="model">feed.process.error.log</field>
+            <field name="arch" type="xml">
+                <form string="Feed Process Error Log" create="0" edit="0">
+                    <sheet>
+                        <group>
+                            <group>
+                            	<field name="feed_id" />
+                                <field name="product_id"/>
+								<field name="error_message" />
+                            </group>
+                            <group>
+                            	<field name="error_datetime"/>
+                               	<field name="file_name" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_feed_process_error_log_tree">
+            <field name="name">feed.process.error.log.tree</field>
+            <field name="model">feed.process.error.log</field>
+            <field name="arch" type="xml">
+                <tree string="Feed Process Error Log" create="0" edit="0">
+                    <field name="feed_id" />
+                    <field name="product_id"/>
+                    <field name="error_datetime"/>
+                    <field name="error_message" />
+                    <field name="file_name" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_feed_process_error_log_search" model="ir.ui.view">
+            <field name="name">feed.process.error.log.search</field>
+            <field name="model">feed.process.error.log</field>
+            <field name="arch" type="xml">
+                <search>
+		  			 <group string="Group By" expand="0">
+		  			 	<filter name="today_log" string="Today" domain="[('error_datetime', '&gt;=', context_today().strftime('%Y-%m-%d 00:00:00')) ,('error_datetime', '&lt;=', context_today().strftime('%Y-%m-%d 23:59:00'))  ]"/>
+		  			 </group>
+				</search>
+	    	</field>
+	    </record>
+        <record id="action_feed_process_error_log" model="ir.actions.act_window">
+            <field name="name">Feed Process Error Log</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">feed.process.error.log</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_today_log': 1 }</field>
+        </record>
+        <menuitem
+			id="menu_feed_process_error_log"
+			action="action_feed_process_error_log"
+			name="Error History"
+			parent="google_feed_config_id"
+			sequence="1"/>
+    </data>
+</odoo>

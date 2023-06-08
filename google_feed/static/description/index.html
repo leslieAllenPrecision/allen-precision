@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Odoo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<!-- odoo description page css -->
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        line-height: 1.1;
+        color: #21272b;
+    }
+
+    ul {
+        color: #222020;
+    }
+
+    * {
+        font-family: "Montserrat", sans-serif;
+    } 
+
+    /* .sb-faq-container .panel .panel-default {
+        padding: 15px 15px;
+        border-radius: 10px;
+    } */
+    .sb-faq-container .panel .panel-heading a:before {
+        content: '\f056';
+        font-family: 'FontAwesome';
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        bottom: auto;
+        right: auto;
+        color: #3b3b98;
+    }
+    .sb-faq-container .panel .panel-heading a.collapsed:before {
+        content: '\f055';
+        font-family: 'FontAwesome';
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        bottom: auto;
+        right: auto;
+        color: #3b3b98;
+    }
+</style>
+
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="javascript:void(0)">
+                  <img src="images/logo.png" alt="SimBeez" style="width: 200px;">
+                </a>
+            </nav>
+
+            <div class="mt-md-0 mt-4 mb-3 mb-lg-0" style="text-align:right;" >
+                <span class="btn btn-sm mb-2 mb-lg-0" style="font-size: 14px; font-weight: 500; background-color: #3B3B98; color: rgb(255, 255, 255); position: relative; overflow: hidden;"><span class="o_ripple d-block position-absolute rounded-circle" style="height: 100.688px; width: 100.688px; top: -49.219px; left: -8.719px;"></span><i class="fa fa-check"></i> Community</span>
+                <span class="btn btn-sm mb-2 mb-lg-0" style="font-size: 14px; font-weight: 500; background-color: #3B3B98; color: rgb(255, 255, 255); position: relative; overflow: hidden;"><i class="fa fa-check"></i> Enterprise</span>
+                <span class="btn btn-sm mb-2 mb-lg-0" style="font-size: 14px; font-weight: 500; background-color: #3B3B98; color: rgb(255, 255, 255); position: relative; overflow: hidden;"><i class="fa fa-check"></i> Odoo.sh</span>
+            </div>
+
+
+
+            <div class="init-intro-container" style="padding: 50px;
+            margin-bottom: 50px;
+            background: #f5f5ff;">
+                <div class="col-12 col-sm-12 col-md-12 text-center">
+                    <h2>Google Feed for Products</h2>
+                    <p>Google Feed for Product module used to display your products on google marketplace.Escape time-consuming and manual data feeds management.This module is automatically generat feeds according to the feed configurations.</p>
+                </div>
+            </div>
+
+            <div class="row pb-sm-5 px-1 pb-4">
+                <h2 class="w-100 text-center my-3" style="font-weight: 400;
+                border-bottom: 1px solid #3b3b98;
+                padding-bottom: 2%;">
+                    <span class="main-color" style="color: #3B3B98;">Key Feature</span> Of Google Feed for Products</h2>
+                <div class="text-center w-100 mb-4">
+                    <hr class="hr-one" style="border: 0;
+                    height: 1px;
+                    background: #333;
+                    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+                    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+                    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+                    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);" />
+                </div>
+                <div class="col-12 col-sm-12 col-md-6" style="margin-bottom:20px">
+                    <div class="sb-kf-main-container shadow bg-white" style="box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04);
+                    padding: 20px;
+                    display: inline-block;width: 100%;">
+                        <div class="kf-icon-container" style="display: inline-block;
+                        width: 20%;
+                        float: left;"><i class="fa fa-rss kf-icon" style="color:#3B3B98;font-size: 70px;"></i></div>
+                        <div class="kf-text-container" style="display: inline-block;
+                        width: 80%;
+                        float: left;">
+                            <h3>Ready to use template</h3>
+                            <p style="margin: 0;">Product feeds easily generate with ready to use templates.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6" style="margin-bottom:20px">
+                    <div class="sb-kf-main-container shadow bg-white" style="box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04);
+                    padding: 20px;
+                    display: inline-block;width: 100%;">
+                        <div class="kf-icon-container" style="display: inline-block;
+                        width: 20%;
+                        float: left;"><i class="fa fa-check-square-o kf-icon" style="color:#3B3B98;font-size: 70px;"></i></div>
+                        <div class="kf-text-container" style="display: inline-block;
+                        width: 80%;
+                        float: left;">
+                            <h3>Conditions-based Attribute</h3>
+                            <p style="margin: 0;">Add condition-based attributes to your google feed feeds.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6" style="margin-bottom:20px">
+                    <div class="sb-kf-main-container shadow bg-white" style="box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04);
+                    padding: 20px;
+                    display: inline-block;width: 100%;">
+                        <div class="kf-icon-container" style="display: inline-block;
+                        width: 20%;
+                        float: left;"><i class="fa fa-refresh kf-icon" style="color:#3B3B98;font-size: 70px;"></i></div>
+                        <div class="kf-text-container" style="display: inline-block;
+                        width: 80%;
+                        float: left;">
+                            <h3>Automation</h3>
+                            <p style="margin: 0;">Set up the schedule for automatic and manually feed generation.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6" style="margin-bottom:20px">
+                    <div class="sb-kf-main-container shadow bg-white" style="box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04);
+                    padding: 20px;
+                    display: inline-block;width: 100%;">
+                        <div class="kf-icon-container" style="display: inline-block;
+                        width: 20%;
+                        float: left;"><i class="fa fa-line-chart kf-icon" style="color:#3B3B98;font-size: 70px;"></i></div>
+                        <div class="kf-text-container" style="display: inline-block;
+                        width: 80%;
+                        float: left;">
+                            <h3>Increase Sales efficiency</h3>
+                            <p style="margin: 0;">Increase your sales efficiency with Google marketplace.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6" style="margin-bottom:20px">
+                    <div class="sb-kf-main-container shadow bg-white" style="box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04);
+                    padding: 20px;
+                    display: inline-block;width: 100%;">
+                        <div class="kf-icon-container" style="display: inline-block;
+                        width: 20%;
+                        float: left;"><i class="fa fa-files-o kf-icon" style="color:#3B3B98;font-size: 70px;"></i></div>
+                        <div class="kf-text-container" style="display: inline-block;
+                        width: 80%;
+                        float: left;">
+                            <h3>Multiple Files Types</h3>
+                            <p style="margin: 0;">You will be able to generate XML and TXT feed file.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-6" style="margin-bottom:20px">
+                    <div class="sb-kf-main-container shadow bg-white" style="box-shadow: -40px 40px 160px 0 rgba(0, 0, 0, 0.08), -8px 8px 15px 0 rgba(120, 120, 120, 0.04), 3px 3px 30px 0 rgba(0, 0, 0, 0.04);
+                    padding: 20px;
+                    display: inline-block;width: 100%;">
+                        <div class="kf-icon-container" style="display: inline-block;
+                        width: 20%;
+                        float: left;"><i class="fa fa-product-hunt kf-icon" style="color:#3B3B98;font-size: 70px;"></i></div>
+                        <div class="kf-text-container" style="display: inline-block;
+                        width: 80%;
+                        float: left;">
+                            <h3>Add Price List</h3>
+                            <p style="margin: 0;">Get to choose any of the pricelist to display product price.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sb-tab-container" style="padding-top: 50px;
+            padding-bottom: 50px;">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#sb-tb-features" id="sb-tb-features-tab" data-toggle="tab" role="tab" aria-controls="sb-tb-features" aria-selected="true" style="color: #3b3b98">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#sb-tb-screenshots" id="sb-tb-screenshots-tab" data-toggle="tab" role="tab" aria-controls="sb-tb-screenshots" aria-selected="true" style="color: #3b3b98">Screenshots</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#sb-tb-userguide" id="sb-tb-userguide-tab" data-toggle="tab" role="tab" aria-controls="sb-tb-userguide" aria-selected="true" style="color: #3b3b98">User Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sb-tb-gmerchant" id="sb-tb-merchant-tab" data-toggle="tab" role="tab" aria-controls="sb-tb-merchant" aria-selected="true" style="color: #3b3b98">Config Google Merchant Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sb-tb-faqs" id="sb-tb-faqs-tab" data-toggle="tab" role="tab" aria-controls="sb-tb-faqs" aria-selected="true" style="color: #3b3b98">FAQS</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" style="padding: 20px;
+                text-align: center;">
+                    <div class="tab-pane fade show active" id="sb-tb-features" role="tabpanel" aria-labelledby="sb-tb-screenshots-tab">
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Enabled google feed menu</h3>
+                        <p>By default, the <strong>Google Feed</strong> menu will not be seen in the menu bar. For making it visible, <strong>Users->Technical Settings</strong> -> click on the checkbox <strong>Generate Google Feed</strong></p>
+                        <img src="images/screenshot/enable_google_feed_option.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+ 
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Feed Configuration</h3>
+                        <p>
+                            For generating google feed for the product, you can select the Main menu. 
+                           <strong>Settings -> Google Feed</strong> -> Click on the <strong>Google Feed Configuration.</strong>
+                        </p>
+                        <img src="images/screenshot/google_feed_menu.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                        
+                        
+
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Feed file Configuration</h3>
+                        <p>
+                            Thereafter, create your new google feed and give Feed Name and File Name.
+                        </p> 
+                        <img src="images/screenshot/feed_file_configuration.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                        
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">File Type Selection</h3>
+                        <p>
+                            Now, you will be able to select the file extension out of XML and TXT to generate your feed.
+                        </p> 
+                        <img src="images/screenshot/file_type_selection.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                       
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Add Price List</h3>
+                        <p>
+                            Now, The product price is displayed according to your selected price list. Inside generate google feed product price is added according to the selected price list
+                        </p> 
+                        <img src="images/screenshot/price_selection.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                        
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Field Mapping</h3>
+                        <p>
+                            At this step, you can defin basic attribute you want to output at the feed. Accurately specify which attribute values should chosen as a ID,Title,Description,Condition etc. 
+                        </p> 
+                        <img src="images/screenshot/field_mapping.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                        
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Product Configuration</h3>
+                        <p>
+                            Now, click on the <strong>‘Feed configuration’</strong> tab, you will get two options which are: <strong>“All Products”</strong> and <strong>“Exclude out of stock product”.</strong>
+                        </p> 
+                        <p>
+                            Here, by default, the checkbox <strong>‘ALL Products’</strong> is selected which will add all the products in google feed. 
+                            However, you can also add your specific products by unchecking the checkbox <strong>‘All Products’</strong>.
+                        </p>
+                        <img src="images/screenshot/product_feed_configuration.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                        
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Add Server</h3>
+                        <p>
+                            If you want to upload the generated google feed onto your server, then you can follow these instructions. Here, you can see the <strong>‘Server Configuration’</strong> tab, under that, click on the checkbox <strong>Upload To server</strong>. 
+                        </p> 
+                        <img src="images/screenshot/server_configuration_edit.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Server Details</h3>
+                        <p>
+                            Create or select the <strong>Server Name</strong> by filling the details. You can select your own FTP or SFTP server and then click on the Test connection button to check the server connection. Thereafter, enter your server folder name in <strong>Server Path</strong>.
+                        </p> 
+                        <img src="images/screenshot/server_configuration_detail.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                        
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Auto Generate</h3>
+                        <p>
+                            If you want to auto-generate google feed, then click on the checkbox <strong>Auto Generate</strong>, which will enable the <strong>Cron schedule</strong> tab.
+                        </p> 
+                        <img src="images/screenshot/cron_configuration.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Error History</h3>
+                        <p>
+                            During the process of feed generation (automated or manual), if any error occurs then it will be shown in the <strong>Error History tab</strong> .
+                        </p> 
+                        <img src="images/screenshot/log_history.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+
+                        <h3 class="sb-f-title" style="margin-bottom: 30px;
+                        padding: 15px;
+                        background-color: #3B3B98;
+                        color: #fff;
+                        margin-top: 20px;">Download Feed File</h3>
+                        <p>
+                            For downloading the generated feed file, click on the <strong>Generated File</strong> option. 
+                        </p> 
+                        <img src="images/screenshot/download_google_feed_file.png" class="sb-screenshot-noshadow" style="width: 100%;margin-bottom: 4%;" />
+                    </div>
+
+                    <div class="tab-pane fade show" id="sb-tb-screenshots" role="tabpanel" aria-labelledby="sb-tb-screenshots-tab">
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Activate Google Feed Option</h3>
+                            <img class="sb-screenshot" src="images/screenshot/enable_google_feed_option.png" alt="Activate Google Feed Option" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Feed Configuration</h3>
+                            <img class="sb-screenshot" src="images/screenshot/google_feed_menu.png" alt="Feed Configuration" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Feed file Setting</h3>
+                            <img class="sb-screenshot" src="images/screenshot/feed_file_configuration.png" alt="Feed file Setting" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Field Mapping</h3>
+                            <img class="sb-screenshot" src="images/screenshot/field_mapping.png" alt="Field Mapping" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Product Configuration</h3>
+                            <img class="sb-screenshot" src="images/screenshot/product_feed_configuration.png" alt="Product Configuration" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Select Server</h3>
+                            <img class="sb-screenshot" src="images/screenshot/server_configuration_edit.png" alt="Select Server" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Server setup</h3>
+                            <img class="sb-screenshot" src="images/screenshot/server_configuration_detail.png" alt="Select Server" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Schedule Action</h3>
+                            <img class="sb-screenshot" src="images/screenshot/cron_configuration.png" alt="Schedule Action" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Error History</h3>
+                            <img class="sb-screenshot" src="images/screenshot/log_history.png" alt="Error History" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Download Feed File</h3>
+                            <img class="sb-screenshot" src="images/screenshot/download_google_feed_file.png" alt="Download Feed File" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show" id="sb-tb-userguide" role="tabpanel" aria-labelledby="sb-tb-userguide-tab">
+<!--                        
+                        <div class="col-12 col-sm-12 col-md-12 text-left" style="margin-bottom: 20px;">
+                            <a href="[User Guide link]" target="_blank"><i class="fa fa-book sb-ug-icon" style="background: #3B3B98;
+                            font-size: 21px;
+                            color: #fff;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            text-align: center;
+                            vertical-align: middle;
+                            margin-right: 10px;
+                            padding: 9px;
+                            display: inline-block;"></i>Read User Guide</a>
+                        </div> -->
+                        <div class="col-12 col-sm-12 col-md-12 text-left" style="margin-bottom: 20px;">
+                            <a href="https://youtu.be/1zEnNVDRujg" target="_blank" style="color: blue;
+                            text-decoration: underline;"><i class="fa fa-youtube-play sb-ug-icon" style="    background-color: #3B3B98;
+                            font-size: 21px;
+                            color: #ffffff;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            text-align: center;
+                            vertical-align: middle;
+                            margin-right: 10px;
+                            padding: 9px;
+                            display: inline-block;"></i>Watch Youtube Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show" id="sb-tb-gmerchant" role="tabpanel" aria-labelledby="sb-tb-gmerchant-tab">
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Google Merchant Configuration</h3>
+                            <p>
+                               Using this module Google Feed for Product generate the feed file, after you want to send this file to SFTP or FTP for further google process. For this process you need to create a Google Merchant Account. So below step through you can create and configure google merchant account.   
+                            </p> 
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Sign up for Google Merchant Center</h3>
+                            <p>
+                                For Sign up the Google Merchant account go to the
+                                <a href="https://www.google.com/retail/solutions/merchant-center/">https://www.google.com/retail/solutions/merchant-center/</a>. 
+                             </p>
+                            <img class="sb-screenshot" src="images/screenshot/google_merchant_sign_in.png" alt="Activate Google Feed Option" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Add Generated Feed in Google Merchant Account</h3>
+                            <p>
+                                After successfully signup and set the basic information in google merchant account. Go to the <strong>Producst -> Feeds</strong> menu.
+                             </p>
+                            <img class="sb-screenshot" src="images/screenshot/add_feed_option.png" alt="Activate Google Feed Option" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Add Basic Information</h3>
+                            <p>
+                                Now, You can see the previously updated feed and you can also add the new feed.Press the plus button for add the new feed. You can see the below basic information screen. Now set the country,language and other information and press next.
+                             </p>
+                            <img class="sb-screenshot" src="images/screenshot/basic_google_feed_option.png" alt="Activate Google Feed Option" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">File Selection</h3>
+                            <p>
+                                Now, You can add the file name and input method. choose imput method upload and press continue for next step.
+                             </p>
+                            <img class="sb-screenshot" src="images/screenshot/google_file_selection.png" alt="Activate Google Feed Option" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                        <div class="sb-screenshot-container" style="margin-bottom: 7%;">
+                            <h3 class="sb-screenshot-title" style="margin: 20px 0;">Setup</h3>
+                            <p>
+                                Now, enter feed file name and browse or drag and drop the generated feed file. If you want to upload the test file at that time you need to tick the <strong>Upload to Test</strong>. After press the Create Feed Button.
+                             </p>
+                            <img class="sb-screenshot" src="images/screenshot/create_google_feed.png" alt="Activate Google Feed Option" style="width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="tab-pane fade show" id="sb-tb-faqs" role="tabpanel" aria-labelledby="sb-tb-faqs-tab">
+                        <div class="s_faq sb-faq-container bg-white">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <!-- faq-1 -->
+                                <div class="panel-group" style="margin-bottom: 20px;
+                                border: 1px solid #3b3b98;  ">
+                                    <div class="panel panel-default">
+                                       <div class="panel-heading mt0" style="position: relative;
+                                       padding: 5px;
+                                       text-align: left;">
+                                          <h4 class="panel-title" style="margin-bottom: 0;">
+                                             <a class="collapsed" data-toggle="collapse" href="#faq0" aria-expanded="false">
+                                             <span class="panelcontent" style="color: #21272b;">
+                                                Is this app compatible with Odoo Enterprise as well as Community?
+                                             </span>
+                                            </a>
+                                          </h4>
+                                       </div>
+                                       <div id="faq0" class="panel-collapse mt16 collapse" style="padding: 0px 53px;
+                                       text-align: left;">
+                                          <div>
+                                             <p class="mb32">
+                                                Yes, the app works perfectly well with Odoo Enterprise (On-premise and Odoo.SH) as well as Community. Odoo Online (Cloud) does not allow installation of third-party apps and hence this app cannot be installed on Odoo Online.
+                                             </p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <!-- faq-2 -->
+                                <div class="panel-group" style="margin-bottom: 20px;
+                                border: 1px solid #3b3b98;  ">
+                                    <div class="panel panel-default">
+                                       <div class="panel-heading mt0" style="position: relative;
+                                       padding: 5px;
+                                       text-align: left;">
+                                          <h4 class="panel-title" style="margin-bottom: 0;">
+                                             <a class="collapsed" data-toggle="collapse" href="#faq1" aria-expanded="false">
+                                             <span class="panelcontent" style="color: #21272b;">
+                                                Need some customization in this app, whom to contact?
+                                             </span>
+                                            </a>
+                                          </h4>
+                                       </div>
+                                       <div id="faq1" class="panel-collapse mt16 collapse" style="padding: 0px 53px;
+                                       text-align: left;">
+                                          <div>
+                                             <p class="mb32">
+                                                Please contact us on  
+                                                <a href="skype:tushar.takodra?chat">
+                                                    <span>Skype</span>.
+                                                </a>
+                                             </p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <!-- faq-3 -->
+                                <div class="panel-group" style="margin-bottom: 20px;
+                                border: 1px solid #3b3b98;  ">
+                                    <div class="panel panel-default">
+                                       <div class="panel-heading mt0" style="position: relative;
+                                       padding: 5px;
+                                       text-align: left;">
+                                          <h4 class="panel-title" style="margin-bottom: 0;">
+                                             <a class="collapsed" data-toggle="collapse" href="#faq2" aria-expanded="false">
+                                             <span class="panelcontent" style="color: #21272b;">
+                                                Do we need to install any additional libraries on the server for using this connector?
+                                             </span>
+                                            </a>
+                                          </h4>
+                                       </div>
+                                       <div id="faq2" class="panel-collapse mt16 collapse" style="padding: 0px 53px;
+                                       text-align: left;">
+                                          <div>
+                                             <p class="mb32">
+                                                Yes, You need to install the paramiko lib in your system (sudo pip3 install paramiko).
+                                             </p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                </div>
+                               
+                                <!-- faq 4-->
+                                <div class="panel-group" style="margin-bottom: 20px;
+                                border: 1px solid #3b3b98;  ">
+                                    <div class="panel panel-default">
+                                       <div class="panel-heading mt0" style="position: relative;
+                                       padding: 5px;
+                                       text-align: left;">
+                                          <h4 class="panel-title" style="margin-bottom: 0;">
+                                             <a class="collapsed" data-toggle="collapse" href="#faq3" aria-expanded="false">
+                                             <span class="panelcontent" style="color: #21272b;">
+                                                Please set mandatory field
+                                             </span>
+                                            </a>
+                                          </h4>
+                                       </div>
+                                       <div id="faq3" class="panel-collapse mt16 collapse" style="padding: 0px 53px;
+                                       text-align: left;">
+                                          <div>
+                                             <p class="mb32">
+                                               If This error is shown then you have to set default fields like Barcode,Image,Internal Reference and Standard Price
+                                             </p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <!-- faq 5-->
+                                <div class="panel-group" style="margin-bottom: 20px;
+                                border: 1px solid #3b3b98;  ">
+                                    <div class="panel panel-default">
+                                       <div class="panel-heading mt0" style="position: relative;
+                                       padding: 5px;
+                                       text-align: left;">
+                                          <h4 class="panel-title" style="margin-bottom: 0;">
+                                             <a class="collapsed" data-toggle="collapse" href="#faq4" aria-expanded="false">
+                                             <span class="panelcontent" style="color: #21272b;">
+                                                Product not available
+                                             </span>
+                                            </a>
+                                          </h4>
+                                       </div>
+                                       <div id="faq4" class="panel-collapse mt16 collapse" style="padding: 0px 53px;
+                                       text-align: left;">
+                                          <div>
+                                             <p class="mb32">
+                                                Due to some error if product is not add in generate file then this error is generate.
+                                            </p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="row pb-sm-5 px-1 pb-4">
+                <h2 class="w-100 text-center my-3" style="font-weight:400">SimBeez <span class="main-color" style="color: #3B3B98;">Odoo Services</span></h2>
+                <div class="text-center w-100">
+                    <hr class="hr-one" style="border: 0;
+                    height: 1px;" />
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <div class="card text-center" style="min-height:90px;background-color: #3B3B98;">
+                        <div class="pt-4">
+                            <i class="fa fa-terminal sb-icons" style="font-size: 45px;
+                            color: #fff;"></i>
+                        </div>
+                        <div class="px-3 pt-3 pb-2">
+                            <h5 class="card-title text-white" style="font-size:19px; font-weight:400">Odoo Implementation</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <div class="card text-center" style="min-height:90px; background-color:#B33771">
+                        <div class="pt-4">
+                            <i class="fa fa-tasks sb-icons" style="font-size: 45px;
+                            color: #fff;"></i>
+                        </div>
+                        <div class="px-3 pt-3 pb-2">
+                            <h5 class="card-title text-white" style="font-size:19px; font-weight:400">Odoo Community Apps</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <div class="card text-center" style="min-height:90px; background-color:#1B9CFC">
+                        <div class="pt-4">
+                            <i class="fa fa-life-ring sb-icons" style="font-size: 45px;
+                            color: #fff;"></i>
+                        </div>
+                        <div class="px-3 pt-3 pb-2">
+                            <h5 class="card-title text-white" style="font-size:19px; font-weight:400">Odoo Support &amp; Maintenance</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <div class="card text-center" style="min-height:90px; background-color:#FD7272">
+                        <div class="pt-4">
+                            <i class="fa fa-wrench sb-icons" style="font-size: 45px;
+                            color: #fff;"></i>
+                        </div>
+                        <div class="px-3 pt-3 pb-2">
+                            <h5 class="card-title text-white" style="font-size:19px; font-weight:400">Odoo Customization</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <div class="card text-center" style="min-height:90px; background-color:#82589F">
+                        <div class="pt-4">
+                            <i class="fa fa-asl-interpreting sb-icons" style="font-size: 45px;
+                            color: #fff;"></i>
+                        </div>
+                        <div class="px-3 pt-3 pb-2">
+                            <h5 class="card-title text-white" style="font-size:19px; font-weight:400">Odoo Integration Services</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <div class="card text-center" style="min-height:90px;background-color: #182C61;">
+                        <div class="pt-4">
+                            <i class="fa fa-window-restore sb-icons" style="font-size: 45px;
+                            color: #fff;"></i>
+                        </div>
+                        <div class="px-3 pt-3 pb-2">
+                            <h5 class="card-title text-white" style="font-size:19px; font-weight:400">Odoo Developer Outsourcing</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pb-sm-5 px-1 pb-4">
+                <h2 class="w-100 text-center my-3" style="font-weight:400">Contact Us</h2>
+                <div class="text-center w-100 mb-4">
+                    <hr class="hr-one" style="border: 0;
+                    height: 1px;
+                    background: #333;
+                    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+                    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+                    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+                    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);" />
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <a href="tel:+919724515387">
+                        <div class="card text-center" style="min-height:90px;background-color: #3B3B98;">
+                            <div class="pt-4">
+                                <i class="fa fa-phone sb-cu-icons" style="font-size: 45px;
+                                color: #fff;"></i>
+                            </div>
+                            <div class="px-3 pt-3 pb-2">
+                                <h5 class="card-title text-white" style="font-size:19px; font-weight:400">+91 9724515387</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <a href="mailto:info@simbeez.com">
+                        <div class="card text-center" style="min-height:90px;background-color: #3B3B98;">
+                            <div class="pt-4">
+                                <i class="fa fa-envelope sb-cu-icons" style="font-size: 45px;
+                                color: #fff;"></i>
+                            </div>
+                            <div class="px-3 pt-3 pb-2">
+                                <h5 class="card-title text-white" style="font-size:19px; font-weight:400">info@simbeez.com</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4" style="margin-bottom:20px">
+                    <a href="skype:tushar.takodra?chat">
+                        <div class="card text-center" style="min-height:90px;background-color: #3B3B98;">
+                            <div class="pt-4">
+                                <i class="fa fa-skype sb-cu-icons" style="font-size: 45px;
+                                color: #fff;"></i>
+                            </div>
+                            <div class="px-3 pt-3 pb-2">
+                                <h5 class="card-title text-white" style="font-size:19px; font-weight:400">tushar.takodra</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+    </body>
+</html>

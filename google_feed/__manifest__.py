@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Google Feed for Products',
+    'version': '14.0',
+    'category': 'hidden',
+    'license': 'OPL-1',
+    'support':'info@simbeez.com',
+    'author':'SimBeez IT solutions LLP',
+    'website': 'https://simbeez.com/',
+    'description':'This module is used to generate the XML feed file for google product,google feed file,google feed for upload,product feed for google,Google feed for Merchant,google shopping feed,feed for google shopping,xml feed for google shopping,text file for google shopping,Data Feed Manager,google Feed Manager,Data Feed,Shopping Feed', 	 
+    'summary': 'This module is used to generate the XML feed file for google product,google feed file,google feed for upload,product feed for google,Google feed for Merchant,google shopping feed,feed for google shopping,xml feed for google shopping,text file for google shopping,Data Feed Manager,google Feed Manager,Data Feed,Shopping Feed',
+    'depends': ['product','website_sale_stock'],
+    'images': ["static/description/images/banner.jpg"],
+    'data': [ 
+        'security/google_feed_security.xml',
+        'security/ir.model.access.csv',
+        'views/google_feed_config_view.xml',
+        'views/server_config_view.xml', 
+        'views/feed_process_error_log.xml',
+        'data/cron_google_feed_views.xml',],
+    'currency': 'EUR',
+    'price': 70.0,
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+}
