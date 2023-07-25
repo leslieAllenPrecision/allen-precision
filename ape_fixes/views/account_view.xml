@@ -7,6 +7,21 @@
             <xpath expr="//group[@id='header_left_group']/div[hasclass('o_td_label')]" position="before">
                 <field name="customer_number" string="Customer Number"/>
             </xpath>
+             <xpath expr="//field[@name='line_ids']//tree//field[@name='name']" position="after">
+                <field name="cost" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="account_cost_prices_view_tree" model="ir.ui.view">
+        <field name="name">account.move.tree.inherit.cost.prices</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="amount_untaxed_signed" position="before">
+                <field name="cost_runtime" optional="hide" sum="Total Cost Runtime"/>
+                <field name="cost_cogs" optional="hide" sum="Total Cost COS Account"/>
+                <field name="cost_move_lines" optional="hide" sum="Total Cost Move Lines"/>
+            </field>
         </field>
     </record>
 </odoo>

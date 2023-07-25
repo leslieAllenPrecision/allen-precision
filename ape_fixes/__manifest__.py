@@ -26,6 +26,7 @@ And to add some new generic fields
        'views/picking_view.xml',
        'views/print_check.xml',
        'views/inventory_report.xml',
+       'views/account_account_type_view.xml',
     ],
     'demo': [  ],
     
