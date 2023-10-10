@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+         <!--        Ticket APE-94-->
+<!--        Ticket Description : Sales Tax Example-->
+<!--        sale document inherit-->
+
+        <template id="e-biz_report_saleorder_customized" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//th[@name='th_taxes']" position="replace"/>
+
+             <xpath expr="//td[5]" position="replace">
+            </xpath>
+        </template>
+
+<!--        invoice document inherit-->
+        <template id="e-biz_report_invoice_customized" inherit_id="account.report_invoice_document">
+            <xpath expr="//th[@name='th_taxes']" position="replace"/>
+
+            <xpath expr="//td[5]" position="replace">
+            </xpath>
+        </template>
+    </data>
+</odoo>
