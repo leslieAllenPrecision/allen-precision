@@ -2,7 +2,7 @@
 {
     # App information
     'name': 'Repair Custom',
-    'version': '15.0.1.0.0',
+    'version': '17.0.1.0.0',
     'category': 'Inventory/Inventory',
     'license': '',
     'description': """This module is used to add custom fields and logic to the repair application""",
@@ -11,11 +11,12 @@
     'website': '',
     'maintainer': '',
     # Dependencies
-    'depends': ['repair'],
+    'depends': ['repair', 'sale'],
     # Views
     'data': [
         'report/repair_report.xml',
         'views/repair.xml',
+        'views/sale_order.xml',
     ],
     # Odoo Store Specific
     'installable': True,

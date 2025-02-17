@@ -3,7 +3,7 @@
 
 {
     'name': 'APE FIXES',
-    'version': '4.7',
+    'version': '1.0',
     'category': 'sale',
     'license': 'AGPL-3',
     'description': """
@@ -16,17 +16,17 @@ And to add some new generic fields
     'depends': ['sale_management','sale_renting','stock','sale','delivery','account_reports','l10n_us_check_printing'],
     'data': [  
         'report/sale_report.xml',
-        'report/delivery_slip.xml',
+        # 'report/delivery_slip.xml',
         'report/invoice.xml',
         'data/sequence.xml',
         'views/product_category.xml',
        'views/res_partner_view.xml',
        'views/sale_view.xml',
-       'views/account_view.xml',
+       'views/account_view.xml', #New Feature
        'views/picking_view.xml',
        'views/print_check.xml',
-       'views/inventory_report.xml',
-       'views/account_account_type_view.xml',
+       # 'views/inventory_report.xml', #Not needed
+       # 'views/account_account_type_view.xml', #New feature
     ],
     'demo': [  ],
     

@@ -9,29 +9,33 @@
     "license": "AGPL-3",
     "website": "https://github.com/OCA/reporting-engine",
     "category": "Productivity",
-    "version": "15.0.1.0.0",
+    "version": "17.0",
     "development_status": "Beta",
-    "depends": ["web"],
+    "depends": [
+        "web", "spreadsheet_dashboard"
+    ],
     "external_dependencies": {
         "deb": ["graphviz"],
     },
     "data": [
+        "security/res_groups.xml",
         "security/ir.model.access.csv",
         "security/rules.xml",
         "views/bve_view.xml",
     ],
     "assets": {
         "web.assets_backend": [
-            "bi_view_editor/static/src/css/bve.css",
-            "bi_view_editor/static/src/js/bi_view_editor.js",
-            "bi_view_editor/static/src/js/bi_view_editor.JoinNodeDialog.js",
-            "bi_view_editor/static/src/js/bi_view_editor.ModelList.js",
-            "bi_view_editor/static/src/js/bi_view_editor.FieldList.js",
-        ],
-        "web.assets_qweb": [
-            "bi_view_editor/static/src/xml/bi_view_editor.xml",
+            # "bi_view_editor/static/src/components/**/*",
+            "bi_view_editor/static/src/components/bi_view_editor/bi_view_editor.css",
+            "bi_view_editor/static/src/components/bi_view_editor/bi_view_editor.esm.js",
+            "bi_view_editor/static/src/components/bi_view_editor/bi_view_editor.xml",
+            "bi_view_editor/static/src/components/bi_view_editor/field_list.esm.js",
+            "bi_view_editor/static/src/components/bi_view_editor/field_list.xml",
+            "bi_view_editor/static/src/components/bi_view_editor/join_node_dialog.esm.js",
+            "bi_view_editor/static/src/components/bi_view_editor/join_node_dialog.xml",
+            "bi_view_editor/static/src/components/bi_view_editor/model_list.esm.js",
+            "bi_view_editor/static/src/components/bi_view_editor/model_list.xml",
         ],
     },
     "uninstall_hook": "uninstall_hook",
-    "installable": True,
 }
