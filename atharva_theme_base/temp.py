@@ -35,13 +35,7 @@ def add_fields(cr):
             'field_description': 'Enable Login Popup',
             'model_id': website_model.id,
         },
-        {
-            'name': 'product_tags_ids',  # New many2many field
-            'ttype': 'many2many',
-            'relation': 'product.tag',  # Assuming this is the correct relation model
-            'field_description': 'Product Tags',
-            'model_id': product_model.id,
-        },
+
     ]
 
     model_field = env['ir.model.fields']

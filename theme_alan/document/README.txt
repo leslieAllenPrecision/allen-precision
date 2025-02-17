@@ -1,1 +1,0 @@
-Get Alan User Guide at https://alan-v16.atharvasystem.com/theme_alan/static/src/documentation/index.html
