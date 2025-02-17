@@ -35,6 +35,12 @@ def add_fields(cr):
             'field_description': 'Enable Login Popup',
             'model_id': website_model.id,
         },
+        {
+            'name': 'active_login_popup',
+            'ttype': 'boolean',
+            'field_description': 'Enable Login Popup',
+            'model_id': website_model.id,
+        },
 
     ]
 
