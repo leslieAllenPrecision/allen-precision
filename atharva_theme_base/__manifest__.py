@@ -26,7 +26,7 @@
         'data/ppg.xml',
         'data/ir_cron.xml',
         'data/snippet_frames.xml',
-        'views/admin/brand_views.xml',
+        # 'views/admin/brand_views.xml',
         'views/admin/product_label.xml',
         'views/admin/megamenu_tab.xml',
         'views/admin/pricelist.xml',
