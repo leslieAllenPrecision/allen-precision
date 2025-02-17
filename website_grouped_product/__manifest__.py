@@ -24,7 +24,7 @@ Combo Products,
     'depends': ['website_sale_stock','website_sale_wishlist','website_sale_comparison', 'web', 'website_sale', ],
     'data': [
         'security/ir.model.access.csv',
-        'views/product_views.xml',
+        # 'views/product_views.xml',
         'views/templates.xml'
     ],
     'assets': {
