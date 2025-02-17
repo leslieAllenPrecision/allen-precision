@@ -25,7 +25,7 @@ Combo Products,
     'data': [
         'security/ir.model.access.csv',
         # 'views/product_views.xml',
-        'views/templates.xml'
+        # 'views/templates.xml'
     ],
     'assets': {
         'web.assets_frontend': [
