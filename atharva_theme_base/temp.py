@@ -36,7 +36,7 @@ def add_fields(cr):
             'model_id': website_model.id,
         },
         {
-            'name': 'product_tag_ids',  # New many2many field
+            'name': 'product_tags_ids',  # New many2many field
             'ttype': 'many2many',
             'relation': 'product.tag',  # Assuming this is the correct relation model
             'field_description': 'Product Tags',
