@@ -39,6 +39,7 @@
         'views/admin/product_config.xml',
         'views/megamenu/templates.xml',
         'views/megamenu/advance_megamenu.xml'
+        
      ],
     'assets': {
         'web.assets_frontend': [
