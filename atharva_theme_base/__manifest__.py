@@ -39,7 +39,7 @@
         'views/admin/product_config.xml',
         'views/megamenu/templates.xml',
         'views/megamenu/advance_megamenu.xml'
-        
+
      ],
     'assets': {
         'web.assets_frontend': [
@@ -56,6 +56,7 @@
         ],
 
     },
+    
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'price': 6.00,
