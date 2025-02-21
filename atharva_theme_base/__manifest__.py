@@ -21,24 +21,24 @@
         'website',
     ],
     'data': [
-        'security/ir.model.access.csv',
-        'data/ir_sequence.xml',
-        'data/ppg.xml',
-        'data/ir_cron.xml',
-        'data/snippet_frames.xml',
-        'views/admin/brand_views.xml',
-        'views/admin/product_label.xml',
-        'views/admin/megamenu_tab.xml',
-        'views/admin/pricelist.xml',
-        'views/admin/attribute_view.xml',
-        'views/admin/menu_tag.xml',
-        'views/admin/ppg.xml',
-        'views/admin/product_faqs.xml',
-        'views/admin/frame.xml',
-        'views/admin/product_info.xml',
-        'views/admin/product_config.xml',
-        'views/megamenu/templates.xml',
-        'views/megamenu/advance_megamenu.xml'
+        # 'security/ir.model.access.csv',
+        # 'data/ir_sequence.xml',
+        # 'data/ppg.xml',
+        # 'data/ir_cron.xml',
+        # 'data/snippet_frames.xml',
+        # 'views/admin/brand_views.xml',
+        # 'views/admin/product_label.xml',
+        # 'views/admin/megamenu_tab.xml',
+        # 'views/admin/pricelist.xml',
+        # 'views/admin/attribute_view.xml',
+        # 'views/admin/menu_tag.xml',
+        # 'views/admin/ppg.xml',
+        # 'views/admin/product_faqs.xml',
+        # 'views/admin/frame.xml',
+        # 'views/admin/product_info.xml',
+        # 'views/admin/product_config.xml',
+        # 'views/megamenu/templates.xml',
+        # 'views/megamenu/advance_megamenu.xml'
 
      ],
     'assets': {
@@ -56,7 +56,7 @@
         ],
 
     },
-    
+
     'pre_init_hook': 'pre_init_hook',
     'post_init_hook': 'post_init_hook',
     'price': 6.00,
